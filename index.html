@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krish | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <span class="name-brand">Krish Shrivastav</span>
+
+        <div class="dropdown">
+            <button class="dropdown-btn" onclick="toggleDropdown()" aria-label="Menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            
+            <div id="contactDropdown" class="dropdown-content">
+                <a href="#about">👤 About Me</a>
+                <a href="#projects"> Projects</a>
+                <a href="#skills"> Skills</a>
+                <hr class="dropdown-divider">
+                <a href="mailto:shrivastavkrish15@gmail.com"> Email Me</a>
+                <a href="#" target="_blank"> Feedback Form</a>
+                <a href="Krish_Resume.pdf" target="_blank" class="drop-resume"> Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>BCA Student & <br><span class="highlight">Coding Enthusiast.</span></h1>
+    </header>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2>About me</h2>
+            <p>
+                I’m a BCA 2nd year student focused on programming, databases, and web development. I’ve worked with C, SQL, and modern web tools through academic projects and self-study.
+            </p>
+            
+            <div class="aim-box">
+                <strong>My Aim:</strong>
+                <p>To evolve into a versatile Software Developer, building scalable applications and solving real-world problems through clean, efficient code.</p>
+            </div>
+
+            <a href="Krish_Shrivastav_Resume.pdf" target="_blank" class="inline-btn">View Full Resume →</a>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <h2 class="section-label">Projects & Experiments</h2>
+        <div class="project-grid">
+            
+            <div class="project-card">
+                <h3>C Lang Projects</h3>
+                <p>Logic-based 'Hangman' and 'Guess the Word' games. Focused on string manipulation and conditional flow in C.</p>
+                <div class="project-tags">
+                    <a href="https://github.com/Krishhh25/Projects-fy" target="_blank" style="text-decoration: none;">
+                        <span>GitHub Source</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Personal Portfolio</h3>
+                <p>A responsive site built to document my journey in BCA and showcase my current tech stack.</p>
+                <div class="project-tags">
+                    <span>HTML</span> 
+                    <span>CSS</span> 
+                    <span>JS</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="profiles-section">
+        <h2 class="section-label">Profiles</h2>
+        <div class="profile-links">
+            <a href="#" target="_blank" class="profile-card">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-linkedin-161-450015.png" alt="LinkedIn" width="20">
+                <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/Krishhh25" target="_blank" class="profile-card">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                <span>GitHub</span>
+            </a>
+
+            <a href="https://leetcode.com/u/KRiSHodzz/" target="_blank" class="profile-card">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-3521542-2944960.png" alt="LeetCode" width="20">
+                <span>LeetCode</span>
+            </a> 
+
+            <a href="https://www.hackerrank.com/profile/shrivastavkrish1" target="_blank" class="profile-card">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-hackerrank-3628234-3031053.png" alt="HackerRank" width="20">
+                <span>HackerRank</span>
+            </a>
+        </div>
+    </section>
+
+    <main class="grid-container" id="skills">
+        <div class="grid-card wide">
+            <h2>Technical Stack</h2>
+            <ul class="skill-list horizontal-list">
+                <li><strong>Web:</strong> HTML, CSS, JS</li>
+                <li><strong>Logic:</strong> Python, C, C++</li>
+                <li><strong>Data:</strong> SQL (Learning)</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Krish Shrivastav</p>
+    </footer>
+
+    <script>
+    function toggleDropdown() {
+        document.getElementById("contactDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.closest('.dropdown-btn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+    </script>
+</body>
+</html>

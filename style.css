@@ -1,0 +1,481 @@
+/* --- 1. VARIABLES & RESET --- */
+:root {
+    --bg: #0a0a0a;
+    --card-bg: #141414;
+    --border: #262626;
+    --text-main: #ffffff;
+    --text-dim: #a1a1a1;
+    --accent: #3b82f6; /* Your signature blue */
+    --terminal-green: #4ade80;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- 2. NAVIGATION --- */
+/* --- Updated Nav Layout --- */
+nav {
+    display: flex;
+    justify-content: space-between; /* Pushes brand left, menu right */
+    align-items: center;
+    padding: 1.5rem 5%;
+}
+
+.dropdown {
+    position: relative;
+}
+
+/* 3-Line Box Style from your screenshot */
+.dropdown-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* Dropdown Menu Position */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;      /* Aligns to the right edge of the button */
+    top: 55px;
+    background-color: var(--card-bg);
+    min-width: 220px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    color: var(--text-dim) !important;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #1a1a1a;
+    color: var(--accent) !important;
+    padding-left: 25px; /* Subtle slide effect */
+}
+
+.dropdown-divider {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 5px 0;
+}
+
+.drop-resume {
+    background: rgba(59, 130, 246, 0.1);
+    font-weight: 700;
+    color: var(--accent) !important;
+}
+
+/* JavaScript Toggle Class */
+.show { display: block !important; animation: fadeIn 0.2s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* The 3-Line Button (Hamburger) */
+.dropdown-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dropdown-btn:hover {
+    border-color: var(--accent);
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* Dropdown Content Box */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    top: 50px;
+    background-color: var(--card-bg);
+    min-width: 200px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: var(--text-dim) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    border-bottom: 1px solid var(--border);
+}
+
+.dropdown-content a:last-child { border-bottom: none; }
+
+.dropdown-content a:hover {
+    background-color: #1a1a1a;
+    color: var(--accent) !important;
+}
+
+.drop-resume {
+    background: rgba(59, 130, 246, 0.1);
+    font-weight: bold;
+}
+
+/* Show class for JS */
+.show { display: block; }
+
+.name-brand { 
+    font-weight: 800; 
+    letter-spacing: -1px; 
+    font-size: 1.2rem; 
+}
+
+.nav-links { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+}
+
+.nav-links a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    font-size: 0.9rem; 
+    transition: color 0.3s ease; 
+}
+
+.nav-links a:hover { 
+    color: var(--accent); 
+}
+
+.resume-btn {
+    background: var(--text-main);
+    color: var(--bg) !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* --- 3. HERO & ABOUT --- */
+.hero { 
+    padding: 8rem 5% 4rem; 
+}
+
+h1 { 
+    font-size: clamp(2.5rem, 8vw, 4rem); 
+    font-weight: 900; 
+    line-height: 1.1; 
+    letter-spacing: -0.02em;
+}
+
+.highlight { 
+    color: var(--accent); 
+}
+
+.about-section { 
+    padding: 4rem 5%; 
+    border-bottom: 1px solid var(--border); 
+}
+
+.about-container { 
+    max-width: 800px; 
+}
+
+.about-container h2 { 
+    color: var(--accent); 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    margin-bottom: 1.5rem; 
+    letter-spacing: 2px; 
+}
+
+.about-container p { 
+    font-size: 1.2rem; 
+    color: var(--text-dim); 
+    margin-bottom: 1.5rem; 
+}
+
+.aim-box {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: rgba(59, 130, 246, 0.05);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+}
+
+.aim-box strong { 
+    display: block; 
+    color: var(--accent); 
+    text-transform: uppercase; 
+    font-size: 0.8rem; 
+    letter-spacing: 1px; 
+    margin-bottom: 0.5rem; 
+}
+
+/* --- 4. PROJECTS SECTION --- */
+.section-label { 
+    padding: 0 5%; 
+    margin-top: 5rem; 
+    font-size: 0.8rem; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    color: var(--accent); 
+}
+
+.projects-section { 
+    padding: 2rem 5% 4rem; 
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+}
+
+.project-card h3 { 
+    margin-bottom: 0.8rem; 
+    font-size: 1.25rem; 
+}
+
+.project-card p { 
+    color: var(--text-dim); 
+    font-size: 0.95rem; 
+    margin-bottom: 1.5rem; 
+    flex-grow: 1;
+}
+
+/* The "Blue Box" Tags */
+.project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: auto;
+}
+
+.project-tags span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 4px;
+    border: 1px solid var(--accent);
+    text-transform: uppercase;
+}
+
+/* CLI Style Button */
+.cli-button {
+    display: inline-block;
+    background: #000;
+    color: var(--terminal-green);
+    font-family: 'Courier New', monospace;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    border: 1px solid #333;
+    transition: 0.3s;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+}
+
+.cli-button .prompt { 
+    color: var(--accent); 
+}
+
+.cli-button:hover {
+    border-color: var(--terminal-green);
+    box-shadow: 0 0 15px rgba(74, 222, 128, 0.15);
+}
+
+/* --- 5. SKILLS & HOBBIES GRID --- */
+.grid-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 1.5rem; 
+    padding: 2rem 5% 5rem; 
+}
+
+.grid-card { 
+    background: var(--card-bg); 
+    border: 1px solid var(--border); 
+    padding: 2rem; 
+    border-radius: 12px; 
+}
+
+.grid-card.wide { 
+    grid-column: span 2; 
+}
+
+.grid-card h2 { 
+    margin-bottom: 1.5rem; 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+    color: var(--accent); 
+    letter-spacing: 1px;
+}
+
+.horizontal-list { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 12px; 
+    list-style: none; 
+}
+
+.horizontal-list li { 
+    background: #1a1a1a; 
+    padding: 10px 18px; 
+    border-radius: 8px; 
+    border: 1px solid var(--border); 
+    font-size: 0.9rem; 
+}
+
+.hobby-flex { 
+    display: flex; 
+    gap: 30px; 
+    flex-wrap: wrap; 
+}
+
+.hobby-item { 
+    flex: 1; 
+    min-width: 150px; 
+}
+
+.hobby-item h3 { 
+    color: var(--accent); 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    margin-bottom: 0.5rem; 
+}
+
+/* --- 6. PROFILES --- */
+.profiles-section { 
+    padding: 4rem 5%; 
+    border-top: 1px solid var(--border); 
+}
+
+.profile-links { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 1.2rem; 
+    margin-top: 1.5rem; 
+}
+
+.profile-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: 0.3s ease;
+}
+
+.profile-card:hover { 
+    border-color: var(--accent); 
+    background: #1a1a1a; 
+    transform: translateY(-2px);
+}
+
+.profile-card img, .profile-card svg { 
+    filter: grayscale(1) invert(1); 
+}
+
+/* --- 7. FOOTER --- */
+footer { 
+    padding: 4rem 5%; 
+    text-align: center; 
+    border-top: 1px solid var(--border); 
+    color: var(--text-dim); 
+    font-size: 0.85rem; 
+}
+
+/* --- 8. MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .grid-card.wide { grid-column: span 1; }
+    .nav-links { display: none; } /* Consider adding a mobile menu icon later */
+    .hero { padding-top: 5rem; }
+}
