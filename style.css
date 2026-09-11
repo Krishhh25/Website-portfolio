@@ -24,8 +24,7 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* --- 2. NAVIGATION --- */
-/* --- Updated Nav Layout --- */
+
 nav {
     display: flex;
     justify-content: space-between; /* Pushes brand left, menu right */
