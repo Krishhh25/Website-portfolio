@@ -27,7 +27,7 @@ body {
 
 nav {
     display: flex;
-    justify-content: space-between; /* Pushes brand left, menu right */
+    justify-content: space-between; 
     align-items: center;
     padding: 1.5rem 5%;
 }
