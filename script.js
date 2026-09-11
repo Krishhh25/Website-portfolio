@@ -2,7 +2,7 @@ function toggleDropdown() {
     document.getElementById("contactDropdown").classList.toggle("show");
 }
 
-// Close dropdown if user clicks anywhere else on the screen
+
 window.onclick = function(event) {
     if (!event.target.closest('.dropdown')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
