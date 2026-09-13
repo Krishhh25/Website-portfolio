@@ -312,6 +312,24 @@ h1 {
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
 }
 
+.project-link,
+.project-link:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.project-link:focus-visible,
+.project-tags a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.project-tags a,
+.project-tags a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
 .project-card h3 { 
     margin-bottom: 0.8rem; 
     font-size: 1.25rem; 
