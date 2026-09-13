@@ -60,12 +60,14 @@
 
     <section class="projects-section" id="projects">
         <h2 class="section-label">Projects & Experiments</h2>
+        <br>
         <div class="project-grid">
+            
 
             <div class="project-card">
                 <a class="project-link" href="https://collab-whiteboard-iota.vercel.app/" target="_blank" rel="noopener noreferrer">
                     <h3>Collab Whiteboard</h3>
-                    <p>A real-time whiteboard where several people can draw and edit the same canvas together — essentially the same problem Figma and Google Docs solve: keeping concurrent edits from overwriting each other. Rather than a simple last-write-wins rule, the sync layer runs on CRDTs (via Yjs), so two people can edit the same shape at the same instant and the board still converges cleanly for both. The trickier part was treating presence and persistence as separate problems — cursor positions vanish the moment someone disconnects, while the shapes themselves survive a server restart. It's a React and Konva.js canvas talking to a Node WebSocket server over that sync layer.</p>
+                    <p>A real-time whiteboard where several people can draw and edit the same canvas together. Rather than a simple last-write-wins rule, the sync layer runs on CRDTs (via Yjs), so two people can edit the same shape at the same instant and the board still converges cleanly It's a React and Konva.js canvas talking to a Node WebSocket server over that sync layer.</p>
                 </a>
                 <div class="project-tags">
                     <span>React</span>
