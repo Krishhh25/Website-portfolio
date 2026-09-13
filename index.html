@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krish | Portfolio</title>
+    <title>Krish Shrivastav | Portfolio</title>
+    <meta name="description" content="Portfolio of Krish Shrivastav, a BCA student building real-time systems and web projects in C, Python, SQL, and JavaScript.">
+    <meta property="og:title" content="Krish Shrivastav | Portfolio">
+    <meta property="og:description" content="BCA student building real-time systems and web projects.">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/jpeg" href="favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,40 +20,40 @@
         <span class="name-brand">Krish Shrivastav</span>
 
         <div class="dropdown">
-            <button class="dropdown-btn" onclick="toggleDropdown()" aria-label="Menu">
+            <button class="dropdown-btn" onclick="toggleDropdown()" aria-label="Menu" aria-expanded="false" aria-controls="contactDropdown">
                 <div class="hamburger">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </button>
-            
-            <div id="contactDropdown" class="dropdown-content">
-                <a href="#about">👤 About Me</a>
-                <a href="#projects"> Projects</a>
-                <a href="#skills"> Skills</a>
+
+            <div id="contactDropdown" class="dropdown-content" role="menu">
+                <a href="#about" role="menuitem">About Me</a>
+                <a href="#projects" role="menuitem">Projects</a>
+                <a href="#skills" role="menuitem">Skills</a>
                 <hr class="dropdown-divider">
-                <a href="mailto:shrivastavkrish15@gmail.com"> Email Me</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_pAenAE28L-rQ8v3voDn7qacPV1332YUtkx7DOA4PKwqi1A/viewform?usp=sharing&ouid=100300583241910254333" target="_blank"> Feedback Form</a>
-                <a href="Resume.pdf" target="_blank" class="drop-resume"> Resume</a>
+                <a href="mailto:shrivastavkrish15@gmail.com" role="menuitem">Email Me</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_pAenAE28L-rQ8v3voDn7qacPV1332YUtkx7DOA4PKwqi1A/viewform?usp=sharing&ouid=100300583241910254333" target="_blank" rel="noopener noreferrer" role="menuitem">Feedback Form</a>
+                <a href="Resume.pdf" target="_blank" rel="noopener noreferrer" class="drop-resume" role="menuitem">Resume</a>
             </div>
         </div>
     </nav>
 
     <header class="hero">
-        <h1>BCA Student & <br><span class="highlight">Coding Enthusiast.</span></h1>
+        <h1>BCA Student &<br><span class="highlight">Backend-Curious Developer.</span></h1>
     </header>
 
     <section class="about-section" id="about">
         <div class="about-container">
             <h2>About me</h2>
-            <p>
-                I’m a BCA student focused on programming, databases, and web development. I’ve worked with C, Python, SQL and modern web tools through academic projects and self-study, with growing exposure to modern web technologies. Detail-oriented, analytical, and motivated to contribute to real-world software projects while strengthening backend and problem-solving skills.
-            </p>
-            
+            <p>I'm a BCA student who'd rather build something than just read about it. I like picking apart how software actually works, reading past the point I need to, then rebuilding the idea myself to check if I actually understood it. That's usually how I end up learning a new tool or concept, more than any course requires.</p>
+            <p>Coursework covers C, Python, and SQL. Outside of it I work in HTML, CSS, JavaScript, and React.</p>
+
+
             <div class="aim-box">
-                <strong>My Aim:</strong>
-                <p>To evolve into a versatile Software Developer, building scalable applications and solving real-world problems through clean, efficient code.</p>
+                <strong>Currently</strong>
+                <p>Learning backend fundamentals Node.js, Express, and relational databases to pair with the real-time systems work.</p>
             </div>
         </div>
     </section>
@@ -54,51 +61,45 @@
     <section class="projects-section" id="projects">
         <h2 class="section-label">Projects & Experiments</h2>
         <div class="project-grid">
-            
-            <div class="project-card">
-                <a class="project-link" href="https://collab-whiteboard-iota.vercel.app/">
-                <b><h3 style="color: white;">Collab board</h3></b>
-                <p>A real time collaborative board where multiple users can draw, create shapes, and edit the same canvas simultaneously</p>
-                </a>
-                <div class="project-tags">
-                    <a href="https://github.com/Krishhh25/collab-whiteboard" target="_blank" style="text-decoration: none;">
-                        <span>GitHub Source</span>
-                    </a>
-                </div>
-            </div>
 
             <div class="project-card">
-                <h3>Personal Portfolio</h3>
-                <p>A responsive site built to document my journey in BCA and showcase my current tech stack.</p>
+                <a class="project-link" href="https://collab-whiteboard-iota.vercel.app/" target="_blank" rel="noopener noreferrer">
+                    <h3>Collab Whiteboard</h3>
+                    <p>A real-time whiteboard where several people can draw and edit the same canvas together — essentially the same problem Figma and Google Docs solve: keeping concurrent edits from overwriting each other. Rather than a simple last-write-wins rule, the sync layer runs on CRDTs (via Yjs), so two people can edit the same shape at the same instant and the board still converges cleanly for both. The trickier part was treating presence and persistence as separate problems — cursor positions vanish the moment someone disconnects, while the shapes themselves survive a server restart. It's a React and Konva.js canvas talking to a Node WebSocket server over that sync layer.</p>
+                </a>
                 <div class="project-tags">
-                    <span>HTML</span> 
-                    <span>CSS</span> 
-                    <span>JS</span>
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>WebSockets</span>
+                    <span>Yjs</span>
+                    <span>Konva.js</span>
                 </div>
+                <a class="project-source" href="https://github.com/Krishhh25/collab-whiteboard" target="_blank" rel="noopener noreferrer">GitHub Source</a>
             </div>
 
         </div>
+        <p class="more-note">More in progress — a couple of backend and database projects are next.</p>
     </section>
 
     <section class="profiles-section">
         <h2 class="section-label">Profiles</h2>
         <div class="profile-links">
-            <a href="www.linkedin.com/in/krishshrivastav/" target="_blank" class="profile-card">
+            <a href="https://www.linkedin.com/in/krishshrivastav/" target="_blank" rel="noopener noreferrer" class="profile-card">
                 <img src="https://cdn.iconscout.com/icon/free/png-256/free-linkedin-161-450015.png" alt="LinkedIn" width="20">
                 <span>LinkedIn</span>
             </a>
 
-            <a href="https://github.com/Krishhh25" target="_blank" class="profile-card">
+            <a href="https://github.com/Krishhh25" target="_blank" rel="noopener noreferrer" class="profile-card">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                 <span>GitHub</span>
             </a>
 
-            <a href="https://leetcode.com/u/KRiSHodzz/" target="_blank" class="profile-card">
+            <a href="https://leetcode.com/u/KRiSHodzz/" target="_blank" rel="noopener noreferrer" class="profile-card">
                 <img src="https://cdn.iconscout.com/icon/free/png-256/free-leetcode-3521542-2944960.png" alt="LeetCode" width="20">
                 <span>LeetCode</span>
-            </a> 
+            </a>
 
-            <a href="https://www.hackerrank.com/profile/shrivastavkrish1" target="_blank" class="profile-card">
+            <a href="https://www.hackerrank.com/profile/shrivastavkrish1" target="_blank" rel="noopener noreferrer" class="profile-card">
                 <img src="https://cdn.iconscout.com/icon/free/png-256/free-hackerrank-3628234-3031053.png" alt="HackerRank" width="20">
                 <span>HackerRank</span>
             </a>
@@ -109,34 +110,17 @@
         <div class="grid-card wide">
             <h2>Technical Stack</h2>
             <ul class="skill-list horizontal-list">
-                <li><strong>Web:</strong> HTML, CSS, JS</li>
-                <li><strong>Logic:</strong> Python, C, C++</li>
-                <li><strong>Data:</strong> SQL (Learning)</li>
+                <li><strong>Languages:</strong> C, C++, Python, SQL</li>
+                <li><strong>Web:</strong> HTML, CSS, JavaScript, React</li>
+                <li><strong>Tools:</strong> Git, Node.js, WebSockets</li>
             </ul>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Krish Shrivastav</p>
+        <p>&copy; <span id="year"></span> Krish Shrivastav</p>
     </footer>
 
-    <script>
-    function toggleDropdown() {
-        document.getElementById("contactDropdown").classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.closest('.dropdown-btn')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>

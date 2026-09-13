@@ -1,16 +1,16 @@
 function toggleDropdown() {
-    document.getElementById("contactDropdown").classList.toggle("show");
+    const dropdown = document.getElementById("contactDropdown");
+    const btn = document.querySelector(".dropdown-btn");
+    const isOpen = dropdown.classList.toggle("show");
+    btn.setAttribute("aria-expanded", isOpen);
 }
 
-
-window.onclick = function(event) {
-    if (!event.target.closest('.dropdown')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        for (var i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-                openDropdown.classList.remove('show');
-            }
-        }
+window.addEventListener("click", function (event) {
+    if (!event.target.closest(".dropdown")) {
+        const dropdown = document.getElementById("contactDropdown");
+        dropdown.classList.remove("show");
+        document.querySelector(".dropdown-btn").setAttribute("aria-expanded", "false");
     }
-}
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
